@@ -85,17 +85,17 @@ function getLanguages(card_text, info) {
         Object.keys(data).forEach(function (key) {
             console.log(key.toLowerCase());
             key = key.toLowerCase();
-            key.forEach(element => {
-                var i = document.createElement("i");
-                i.classList.add("bi");
-                if (element === "javascript") {
-                    i.classList.add("bi-filetype-js");
-                } else if (element === "python") {
-                    i.classList.add("bi-filetype-py");
-                }
-                i.classList.add("bi-filetype" + element);
-                card_text.appendChild(i);
-            });
+            var i = document.createElement("i");
+            i.classList.add("bi");
+            if (key === "javascript") {
+                i.classList.add("bi-filetype-js");
+            } else if (key === "python") {
+                i.classList.add("bi-filetype-py");
+            } else if (key === "c#") {
+                i.classList.add("bi-filetype-cs");
+            }
+            i.classList.add("bi-filetype" + key);
+            card_text.appendChild(i);
         });
     });
 }

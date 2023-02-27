@@ -11,6 +11,22 @@
       font-size: 2rem;
       color: #880f0b;
       margin-right: .25rem; }
+    .display-section .card .bi-filetype-py,
+    .display-section .card .bi-filetype-typescript {
+      color: #3b78a8; }
+    .display-section .card .bi-filetype-js {
+      color: #f7e01b; }
+    .display-section .card .bi-filetype-cs {
+      color: #05940d; }
+    .display-section .card .bi-filetype-css {
+      color: #563d7c; }
+    .display-section .card .bi-filetype-sass,
+    .display-section .card .bi-filetype-scss {
+      color: #cc6799; }
+    .display-section .card .bi-filetype-java {
+      color: #b07219; }
+    .display-section .card .bi-filetype-html {
+      color: #e34c26; }
   .display-section .animated.fadeIn {
     -webkit-animation-name: fadeIn;
     -moz-animation-name: fadeIn;

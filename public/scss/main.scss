@@ -13,6 +13,29 @@
             color: #880f0b;
             margin-right: .25rem;
         }
+		.bi-filetype-py,
+		.bi-filetype-typescript {
+			color: #3b78a8;	
+		}
+		.bi-filetype-js {
+			color: #f7e01b;
+		}
+		.bi-filetype-cs {
+			color: #05940d;
+		}
+		.bi-filetype-css {
+			color: #563d7c;
+		}
+		.bi-filetype-sass,
+		.bi-filetype-scss {
+			color: #cc6799;
+		}
+		.bi-filetype-java {
+			color: #b07219;
+		}
+		.bi-filetype-html {
+			color: #e34c26;
+		}
     }
 
     .animated.fadeIn {
