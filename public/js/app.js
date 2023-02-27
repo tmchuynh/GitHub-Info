@@ -18,6 +18,10 @@ username.addEventListener("keyup", function (event) {
 });
 
 function createGraph(username) {
+    while (graph.firstChild) {
+        graph.removeChild(graph.firstChild);
+    }
+
     var img = document.createElement("img");
     img.setAttribute("src", "https://ghchart.rshah.org/aa130d/" + username);
     graph.appendChild(img);
@@ -44,6 +48,7 @@ function creatCards(info) {
     var card_text = document.createElement("p");
     card_text.classList.add("card-text");
     card_text.innerHTML = "placeholder for languages";
+    getLanguages(card_text, info);
     card_body.appendChild(card_text);
 
     var card_link = document.createElement("a");
@@ -71,4 +76,19 @@ function creatCards(info) {
     }
     card_body.appendChild(topics);
     display.appendChild(card);
+}
+
+function getLanguages(card_text, info) {
+    $.getJSON(info.languages_url, function (data) {
+        Object.keys(data).forEach(function (key) {
+            console.log(key.toLowerCase());
+            key = key.toLowerCase();
+            key.forEach(element => {
+                var i = document.createElement("i");
+                i.classList.add("bi");
+                i.classList.add("bi-filetype" + element);
+                card_text.appendChild(i);
+            });
+        });
+    });
 }
