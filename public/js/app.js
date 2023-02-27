@@ -7,7 +7,7 @@ username.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         value = username.value;
         createGraph(value);
-        $.getJSON("https://api.github.com/users/" + value + "/repos?per_page=1000", function (data) {
+        $.getJSON("https://api.github.com/users/" + value + "/repos?per_page=500", function (data) {
             console.log(data);
             for (var i = 0; i < data.length; i++) {
                 creatCards(data[i]);
@@ -30,6 +30,8 @@ function createGraph(username) {
 function creatCards(info) {
     var card = document.createElement("div");
     card.classList.add("card");
+    card.classList.add("animated");
+    card.classList.add("fadeIn");
 
     var card_body = document.createElement("div");
     card_body.classList.add("card-body");
@@ -86,6 +88,11 @@ function getLanguages(card_text, info) {
             key.forEach(element => {
                 var i = document.createElement("i");
                 i.classList.add("bi");
+                if (element === "javascript") {
+                    i.classList.add("bi-filetype-js");
+                } else if (element === "python") {
+                    i.classList.add("bi-filetype-py");
+                }
                 i.classList.add("bi-filetype" + element);
                 card_text.appendChild(i);
             });
