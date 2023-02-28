@@ -47,9 +47,8 @@ function creatCards(info) {
     card_subtitle.innerHTML = info.pushed_at;
     card_body.appendChild(card_subtitle);
 
-    var card_text = document.createElement("p");
+    var card_text = document.createElement("div");
     card_text.classList.add("card-text");
-    card_text.innerHTML = "placeholder for languages";
     getLanguages(card_text, info);
     card_body.appendChild(card_text);
 
